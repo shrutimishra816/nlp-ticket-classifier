@@ -1,0 +1,9 @@
+Ticket ID,Text,Category,Priority,Confidence,Status,Assigned To
+TKT-001,My card was charged twice this month and I need it fixed urgently.,Billing,High,92%,New,
+TKT-002,The app keeps crashing every time I try to export a report.,Technical Issue,High,68%,New,
+TKT-003,I forgot my password and the reset link isn't working.,Account Access,High,91%,New,
+TKT-004,Would love to see a dark mode added to the interface.,Feature Request,Low,78%,New,
+TKT-005,I need all my personal data deleted immediately per GDPR.,Data Privacy,Critical,94%,New,
+TKT-006,The platform is incredibly slow today — 3 min load times.,Performance,Medium,73%,New,
+TKT-007,"Just signed up, not sure how to add my team members.",Onboarding,Low,87%,New,
+TKT-008,I want a refund for the annual plan I just purchased.,Refund,High,93%,New,
