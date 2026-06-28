@@ -1,3 +1,14 @@
+---
+title: NLP Ticket Classifier
+emoji: 🎫
+colorFrom: amber
+colorTo: yellow
+sdk: docker
+app_file: app.py
+app_port: 7860
+pinned: false
+---
+
 # NLP Ticket Classifier → Airtable Ops Dashboard
 
 > **60% faster triage** on 10,000+ support tickets · **$30K projected annual saving** · 8-category multi-class classifier with Airtable priority dashboard

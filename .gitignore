@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.joblib
+.env
+node_modules/
+frontend/build/
