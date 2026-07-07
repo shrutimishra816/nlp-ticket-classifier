@@ -1,7 +1,7 @@
 {
   "accuracy": 0.478125,
   "f1_weighted": 0.486096618173158,
-  "eval_methodology": "held-out templates per category (2 of 8), not a random split of augmented sentences \u2014 this avoids leaking near-duplicate template variants between train and test.",
+  "eval_methodology": "held-out templates per category (4 of ~18), not a random split of augmented sentences \u2014 this avoids leaking near-duplicate template variants between train and test.",
   "per_category": {
     "billing": {
       "precision": 0.2077922077922078,
