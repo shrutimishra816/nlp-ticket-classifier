@@ -1,66 +1,67 @@
 {
-  "accuracy": 1.0,
-  "f1_weighted": 1.0,
+  "accuracy": 0.478125,
+  "f1_weighted": 0.486096618173158,
+  "eval_methodology": "held-out templates per category (2 of 8), not a random split of augmented sentences \u2014 this avoids leaking near-duplicate template variants between train and test.",
   "per_category": {
     "billing": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.2077922077922078,
+      "recall": 0.4,
+      "f1-score": 0.27350427350427353,
       "support": 40.0
     },
     "technical_issue": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.3728813559322034,
+      "recall": 0.55,
+      "f1-score": 0.4444444444444444,
       "support": 40.0
     },
     "account_access": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.7073170731707317,
+      "recall": 0.725,
+      "f1-score": 0.7160493827160493,
       "support": 40.0
     },
     "feature_request": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.725,
+      "recall": 0.725,
+      "f1-score": 0.725,
       "support": 40.0
     },
     "refund": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.6206896551724138,
+      "recall": 0.45,
+      "f1-score": 0.5217391304347826,
       "support": 40.0
     },
     "onboarding": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.45,
+      "recall": 0.225,
+      "f1-score": 0.3,
       "support": 40.0
     },
     "performance": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.7916666666666666,
+      "recall": 0.475,
+      "f1-score": 0.59375,
       "support": 40.0
     },
     "data_privacy": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.36666666666666664,
+      "recall": 0.275,
+      "f1-score": 0.3142857142857143,
       "support": 40.0
     },
-    "accuracy": 1.0,
+    "accuracy": 0.478125,
     "macro avg": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.5302517031751113,
+      "recall": 0.478125,
+      "f1-score": 0.48609661817315797,
       "support": 320.0
     },
     "weighted avg": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "precision": 0.5302517031751112,
+      "recall": 0.478125,
+      "f1-score": 0.486096618173158,
       "support": 320.0
     }
   }
