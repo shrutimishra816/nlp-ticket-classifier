@@ -11,7 +11,7 @@ pinned: false
 
 # TicketSight — NLP Support Ticket Classifier
 
-> **89% accuracy · 60% faster triage** on 10,000+ tickets · 8 categories · Priority tagging · React dashboard · Airtable export
+> **TF-IDF + Logistic Regression baseline · 60% faster triage** on 10,000+ tickets · 8 categories · Priority tagging · React dashboard · Airtable export · BERT fine-tuning in progress ([bert_finetune.py](bert_finetune.py))
 
 Route every support ticket to the right team, instantly — no analyst required.
 
@@ -38,7 +38,7 @@ Raw Support Ticket (free text)
         │
         ▼
   Logistic Regression Classifier
-  (C=5, lbfgs, 89% accuracy)
+  (C=5, lbfgs, 47.8% accuracy on held-out templates)
         │
         ├──► Category (8 classes)
         ├──► Priority Tag (Critical / High / Medium / Low)
@@ -170,12 +170,25 @@ curl -X POST http://localhost:7860/classify/batch \
 
 | Metric | Value |
 |--------|-------|
-| Accuracy | 89% |
-| F1 (weighted) | 0.89 |
+| Accuracy (held-out templates) | 47.8% |
+| F1 (weighted) | 0.486 |
 | Categories | 8 |
 | Training tickets | 1,600 (200 per class) |
 | Vectoriser | TF-IDF, bigrams, 15k features |
 | Classifier | Logistic Regression (C=5, lbfgs) |
+
+**Note on methodology:** this is evaluated on templates the model never saw
+during training (see `classifier.py`), not a random split of augmented
+sentences — an earlier version of this evaluation used a random split,
+which leaked near-duplicate template variants between train and test and
+reported inflated accuracy (as high as 100%). The number above reflects
+genuine generalization to unseen phrasing.
+
+TF-IDF + Logistic Regression on this size of synthetic dataset generalizes
+weakly to unseen phrasing — see `bert_finetune.py` for a BERT fine-tuning
+approach expected to generalize better via contextual embeddings. That
+script hasn't been run to completion yet; its real accuracy will be added
+here once it has.
 
 Full per-category precision/recall/F1 in `evaluation_report.json`.
 
