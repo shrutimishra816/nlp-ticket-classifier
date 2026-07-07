@@ -335,7 +335,7 @@ def train_and_evaluate(df: pd.DataFrame = None) -> Pipeline:
         json.dump({
             "accuracy": acc,
             "f1_weighted": f1,
-            "eval_methodology": "held-out templates per category (2 of 8), "
+            "eval_methodology": "held-out templates per category (4 of ~18), "
                                  "not a random split of augmented sentences — "
                                  "this avoids leaking near-duplicate template "
                                  "variants between train and test.",
