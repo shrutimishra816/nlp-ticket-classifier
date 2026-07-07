@@ -63,6 +63,16 @@ TICKET_TEMPLATES = {
         "My payment failed but I was still charged.",
         "Can you send me an itemised bill for this month?",
         "I upgraded my plan but was billed at the old rate.",
+        "Do you offer annual billing instead of monthly?",
+        "My credit card on file expired, how do I update it?",
+        "The tax amount on my receipt looks wrong.",
+        "Can I switch from monthly to yearly billing mid-cycle?",
+        "I don't recognize this charge from your company.",
+        "How do I download past invoices for our accountant?",
+        "We were billed in the wrong currency this cycle.",
+        "Is there a discount for paying annually upfront?",
+        "My proforma invoice doesn't match what I was actually charged.",
+        "Can you explain the line items on my last bill?",
     ],
     "technical_issue": [
         "The dashboard is not loading for me since this morning.",
@@ -73,6 +83,16 @@ TICKET_TEMPLATES = {
         "The sync button is greyed out and unclickable.",
         "I cannot upload files larger than 5MB even though my plan allows it.",
         "The notification emails stopped arriving three days ago.",
+        "Search results are missing items I know exist in my account.",
+        "The chart on my dashboard is rendering blank.",
+        "I keep getting logged out mid-session for no reason.",
+        "The webhook payload is missing fields it used to include.",
+        "Filters on the reports page aren't applying correctly.",
+        "The app freezes when I switch between two projects.",
+        "My saved views disappeared after the last update.",
+        "The CSV export is cutting off after 500 rows.",
+        "Drag and drop stopped working on the kanban board.",
+        "The calendar sync with Google is showing duplicate events.",
     ],
     "account_access": [
         "I forgot my password and the reset email isn't arriving.",
@@ -83,6 +103,16 @@ TICKET_TEMPLATES = {
         "I need to change the email address on my account.",
         "My account shows as suspended but I haven't violated any terms.",
         "SSO login stopped working after our IT team made changes.",
+        "I'm being asked to verify my identity but the link is broken.",
+        "Can you merge two accounts I accidentally created?",
+        "My session keeps expiring within a minute of logging in.",
+        "I no longer have access to the phone number for 2FA.",
+        "How do I transfer account ownership to a new admin?",
+        "I was removed from the workspace by mistake.",
+        "The magic link sign-in isn't sending me anything.",
+        "My account shows the wrong company name after a rename.",
+        "Can you reset my security questions? I don't remember the answers.",
+        "Our former employee still has access and should be revoked.",
     ],
     "feature_request": [
         "It would be great if you could add a dark mode option.",
@@ -93,6 +123,16 @@ TICKET_TEMPLATES = {
         "Can you support CSV import for bulk user onboarding?",
         "An API endpoint for webhooks would be very useful.",
         "It would help to have role-based permissions at the project level.",
+        "Would you consider adding keyboard shortcuts for power users?",
+        "A mobile offline mode would really help our field team.",
+        "Could you add support for custom fields on tickets?",
+        "It'd be nice to tag teammates directly in comments.",
+        "Please consider a public status page for uptime.",
+        "Any plans to support multi-language interfaces?",
+        "Can we get a Slack slash-command integration?",
+        "A recycle bin for deleted items would prevent accidents.",
+        "Would you add version history for edited documents?",
+        "Could the search support filtering by date range?",
     ],
     "refund": [
         "I want a refund for the annual plan I purchased yesterday.",
@@ -103,6 +143,16 @@ TICKET_TEMPLATES = {
         "I was double-charged and need one payment refunded.",
         "Can I get a prorated refund for the remaining months?",
         "The feature I paid for was removed, please refund that portion.",
+        "We never used the service, can we get our money back?",
+        "How long does a refund typically take to appear on my card?",
+        "I'd like to cancel and get a refund for the unused days.",
+        "The trial converted to paid without my consent, refund please.",
+        "Can you refund the add-on I purchased by mistake?",
+        "I was quoted a different price than what I was charged.",
+        "Is there a money-back guarantee if we're not satisfied?",
+        "Please reverse the charge, we decided not to proceed.",
+        "My refund was approved but I still don't see the money.",
+        "Can partial refunds be issued for downgraded plans?",
     ],
     "onboarding": [
         "I just signed up and don't know how to get started.",
@@ -113,6 +163,16 @@ TICKET_TEMPLATES = {
         "I set up my account but can't find the import option.",
         "What's the recommended way to migrate data from our old tool?",
         "Is there a video tutorial for first-time users?",
+        "Do you offer a live demo or onboarding call?",
+        "What's the best way to structure teams for a 50-person company?",
+        "How long does it usually take to fully set up an account?",
+        "Is there a checklist for new admins to follow?",
+        "Can someone help us configure single sign-on during setup?",
+        "What data can be imported from a spreadsheet?",
+        "We're switching from a competitor, is there a migration guide?",
+        "How do I set default permissions for new members?",
+        "Is there a sandbox environment to test before going live?",
+        "What's the fastest path to our first successful project?",
     ],
     "performance": [
         "The platform has been very slow to load this week.",
@@ -123,6 +183,16 @@ TICKET_TEMPLATES = {
         "The API response times have doubled in the last few days.",
         "Large datasets cause the browser to freeze.",
         "Exporting more than 1000 rows causes a timeout error.",
+        "Page load times have gotten worse since the last release.",
+        "The app lags whenever multiple users edit simultaneously.",
+        "Our automation workflows are taking much longer to run.",
+        "Is there a known outage affecting response times right now?",
+        "Scrolling through long lists is noticeably choppy.",
+        "The mobile app takes ages to sync after being offline.",
+        "Bulk actions on 100+ items time out before completing.",
+        "Login itself is taking 10+ seconds some days.",
+        "Notifications are arriving with a long delay.",
+        "The video/screen recording feature buffers constantly.",
     ],
     "data_privacy": [
         "I need to know what personal data you store about me.",
@@ -133,12 +203,30 @@ TICKET_TEMPLATES = {
         "Is our data encrypted at rest and in transit?",
         "We're an EU company — where are your servers located?",
         "Can I export all my data before deleting my account?",
+        "Do you sell or share user data with third parties?",
+        "What's your data retention policy after account closure?",
+        "Can you provide a SOC 2 or ISO 27001 report?",
+        "How do I submit a right-to-be-forgotten request?",
+        "Is there an audit log of who accessed our data?",
+        "Do you support customer-managed encryption keys?",
+        "What happens to our data if we don't renew the contract?",
+        "Can we restrict data storage to a specific region?",
+        "Please confirm whether subprocessors have access to our data.",
+        "How is data anonymized in your analytics pipeline?",
     ]
 }
 
 
 def generate_dataset(n_per_class: int = 200) -> pd.DataFrame:
-    """Generate synthetic training data by augmenting templates."""
+    """Generate synthetic training data by augmenting templates.
+
+    NOTE: kept for backwards compatibility / --predict path. Evaluation no
+    longer uses a random train_test_split over this combined set, because a
+    random split lets near-duplicate fillers of the SAME base template land
+    in both train and test — that's data leakage, and it's why an earlier
+    version of this project reported 100% accuracy. See
+    generate_train_test_split() below for the honest evaluation split.
+    """
     rows = []
     rng = np.random.default_rng(42)
 
@@ -153,6 +241,43 @@ def generate_dataset(n_per_class: int = 200) -> pd.DataFrame:
 
     df = pd.DataFrame(rows).sample(frac=1, random_state=42).reset_index(drop=True)
     return df
+
+
+def generate_train_test_split(n_per_class_train: int = 200,
+                               n_per_class_test: int = 40,
+                               templates_held_out_per_class: int = 2):
+    """Honest split: hold out whole templates per category for testing.
+
+    Instead of randomly splitting augmented sentences (which leaks near-
+    duplicates of the same template into both train and test), this holds
+    out entire base templates per category so the test set contains
+    phrasing the model never saw a variant of during training.
+    """
+    rng = np.random.default_rng(42)
+    fillers_start = ["Hi, ", "Hello, ", "Hey, ", "Good morning, ", ""]
+    fillers_end   = [" Please help.", " Thanks.", " Urgent!", " ASAP please.", ""]
+
+    train_rows, test_rows = [], []
+
+    for category, templates in TICKET_TEMPLATES.items():
+        templates = list(templates)
+        rng.shuffle(templates)
+        held_out = templates[:templates_held_out_per_class]
+        train_templates = templates[templates_held_out_per_class:]
+
+        for _ in range(n_per_class_train):
+            base = rng.choice(train_templates)
+            text = rng.choice(fillers_start) + base + rng.choice(fillers_end)
+            train_rows.append({"text": text.strip(), "category": category})
+
+        for _ in range(n_per_class_test):
+            base = rng.choice(held_out)
+            text = rng.choice(fillers_start) + base + rng.choice(fillers_end)
+            test_rows.append({"text": text.strip(), "category": category})
+
+    train_df = pd.DataFrame(train_rows).sample(frac=1, random_state=42).reset_index(drop=True)
+    test_df = pd.DataFrame(test_rows).sample(frac=1, random_state=42).reset_index(drop=True)
+    return train_df, test_df
 
 
 # ── Model ────────────────────────────────────────────────────────────────────
@@ -174,24 +299,31 @@ def build_pipeline() -> Pipeline:
     ])
 
 
-def train_and_evaluate(df: pd.DataFrame) -> Pipeline:
-    X_train, X_test, y_train, y_test = train_test_split(
-        df["text"], df["category"],
-        test_size=0.2, stratify=df["category"], random_state=42
+def train_and_evaluate(df: pd.DataFrame = None) -> Pipeline:
+    """Train on train-only templates, evaluate on held-out templates.
+
+    `df` is accepted for backwards compatibility but is ignored — the honest
+    split in generate_train_test_split() is used instead of a random split
+    over combined data, since that random split was leaking near-duplicate
+    template variants between train and test (see note above).
+    """
+    train_df, test_df = generate_train_test_split(
+        n_per_class_train=200, n_per_class_test=40, templates_held_out_per_class=4
     )
 
     model = build_pipeline()
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
+    model.fit(train_df["text"], train_df["category"])
+    y_pred = model.predict(test_df["text"])
+    y_test = test_df["category"]
 
     acc = accuracy_score(y_test, y_pred)
     f1  = f1_score(y_test, y_pred, average="weighted")
 
-    print(f"\n Model Performance")
+    print(f"\n Model Performance (held-out templates, not seen in training)")
     print(f" {'─'*40}")
     print(f"  Accuracy         : {acc:.1%}")
     print(f"  F1 (weighted)    : {f1:.1%}")
-    print(f"  Test set size    : {len(X_test)} tickets")
+    print(f"  Test set size    : {len(y_test)} tickets")
     print(f"\n Per-Category Report:")
     print(classification_report(y_test, y_pred, target_names=CATEGORIES))
 
@@ -200,8 +332,15 @@ def train_and_evaluate(df: pd.DataFrame) -> Pipeline:
                                    target_names=CATEGORIES,
                                    output_dict=True)
     with open("evaluation_report.json", "w") as f:
-        json.dump({"accuracy": acc, "f1_weighted": f1,
-                   "per_category": report}, f, indent=2)
+        json.dump({
+            "accuracy": acc,
+            "f1_weighted": f1,
+            "eval_methodology": "held-out templates per category (2 of 8), "
+                                 "not a random split of augmented sentences — "
+                                 "this avoids leaking near-duplicate template "
+                                 "variants between train and test.",
+            "per_category": report
+        }, f, indent=2)
     print(" Saved: evaluation_report.json")
 
     joblib.dump(model, "ticket_classifier.joblib")
