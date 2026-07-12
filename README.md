@@ -117,7 +117,29 @@ python app.py
 
 ---
 
+## Weekly triage & SLA compliance report (Excel)
+
+Categorizing inbound tickets is structurally the same problem as
+categorizing product/quality defects — both are "bucket the issue, prioritize
+it, roll it up into a report someone acts on." `excel_reporting/weekly_triage_report.py`
+scores a batch of simulated tickets with the trained model and publishes an
+operations-style **Excel** report:
+
+```bash
+pip install -r requirements.txt
+python excel_reporting/weekly_triage_report.py
+```
+
+- **Summary** — tickets scored, top category, SLA breach rate
+- **Category Pareto** — ticket volume ranked by category with a chart
+- **Weekly Trend** — ticket volume by category x week, pivot-table layout (the daily/weekly/monthly reporting cadence an ops/quality analyst publishes)
+- **SLA Compliance** — Critical/High priority tickets vs. a response-time target, Pass/Breach flagged by segment
+- **Ticket Log** — full scored detail for audit
+
+---
+
 ## API
+
 
 ### `POST /classify`
 
