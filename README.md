@@ -234,6 +234,22 @@ Runs on **Hugging Face Spaces** (Docker, free tier, no expiration).
 Dockerfile builds React first (Node 18), then runs Flask (Python 3.10).  
 Model trains automatically on first startup.
 
+### Run locally with Docker
+
+```bash
+docker compose up --build
+# → http://localhost:7860
+```
+
+`docker-compose.yml` persists the trained model (`ticket_classifier.joblib`)
+in a named volume so it isn't retrained on every container restart, and adds
+a `/health`-based healthcheck. Equivalent plain Docker:
+
+```bash
+docker build -t nlp-ticket-classifier .
+docker run -p 7860:7860 nlp-ticket-classifier
+```
+
 ---
 
 ## Tech Stack

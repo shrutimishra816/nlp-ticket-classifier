@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  ticketsight:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nlp-ticket-classifier:local
+    container_name: ticketsight
+    ports:
+      - "7860:7860"
+    volumes:
+      # Persist the app dir (incl. ticket_classifier.joblib) so the model
+      # isn't retrained from scratch on every container restart
+      - app-state:/app
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:7860/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  app-state:

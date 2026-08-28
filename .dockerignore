@@ -1,0 +1,33 @@
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Node / React (built inside the image; local node_modules shouldn't be copied in)
+frontend/node_modules/
+frontend/build/
+npm-debug.log*
+
+# Notebooks & docs (not needed at runtime)
+*.ipynb
+ticket_classifier_notebook.ipynb
+README.md
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Misc
+*.log
+.env
